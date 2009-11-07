@@ -1,9 +1,9 @@
 class Vote
   include DataMapper::Resource
   
-  BLOCKED=-1
-  STAND_ASIDE=0
-  CONSENT=1
+  BLOCKED = -1
+  STAND_ASIDE = 0
+  CONSENT = 1
   
   property :id, Serial
   property :topic_id, Integer
@@ -15,8 +15,9 @@ class Vote
   belongs_to :topic
 
   def blocked?
-    return self.vote != CONSENT
+    return self.vote == BLOCKED
   end
+
 
 end
 

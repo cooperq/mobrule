@@ -13,18 +13,19 @@ get '/error/404' do
   status 404
   haml :error_404
 end
+
+get '/error/500' do
+  status 500
+  haml :error_500
+end
+
 #view a specific consensus
 #also shows the list of votes
 get '/:consensus' do
   @topic = Topic.first(:permalink=>params[:consensus])
-  @flash = "This topic has been blocked" if @topic.blocked?
   redirect '/error/404' if @topic.nil?
+  @flash = "This topic has been blocked" if @topic.blocked?
   haml :show_consensus
-end
-
-get '/error/404' do
-  status 404
-  haml :error_404
 end
 
 #create a consensus

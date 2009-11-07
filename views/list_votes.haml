@@ -1,0 +1,20 @@
+.stats
+  %p
+    - if @topic.blocks > 0
+      There have been
+      =@topic.blocks
+      blocks
+  %p
+    - if @topic.stand_asides > 0
+      There have been
+      =@topic.stand_asides
+      stand asides.
+  %p
+    - if @topic.consents > 0
+      There have been
+      =@topic.consents
+      consents.
+  .comments
+    -@topic.votes.each do |v|
+      .text
+        =v.comment

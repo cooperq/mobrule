@@ -1,5 +1,9 @@
 class Topic 
   include DataMapper::Resource
+  
+  BLOCKED = -1
+  STAND_ASIDE = 0
+  CONSENT = 1
 
   property :id, Serial
   property :title, String
@@ -14,11 +18,21 @@ class Topic
   has n, :votes
 
   def blocked?
-    self.all.each do |t|
-      return flase if t.vote.blocked?
-    end
-    true
+    return self.blocks > 0
   end
 
-  def
+  def blocks
+    Vote.all({:topic_id=>self.id, :vote=>BLOCKED}).length
+  end
+
+  def stand_asides
+    Vote.all({:topic_id=>self.id, :vote=>STAND_ASIDE}).length
+  end
+
+  def consents
+    Vote.all({:topic_id=>self.id, :vote=>CONSENT}).length
+  end
+
 end
+
+Topic.auto_upgrade!
