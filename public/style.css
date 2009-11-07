@@ -1,0 +1,105 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+ol, ul {
+  list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+}
+blockquote, q {
+  quotes: "" "";
+}
+
+#flash {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background: #ff0000;
+  padding: 5px;
+  font-size: 1.25em;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#container {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  height: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 15px 0 5px 0;
+}
+
+body {
+  background: #000000;
+  font-family:'lucida grande', 'lucida sans unicade', sans-serif;
+  font-size:100%;
+  line-height:1.5;
+}
+
+a {
+  text-decoration: none;
+  color: #001177;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#content {
+  padding: 0 15px 0 15px;
+  margin: 10px auto 10px auto;
+}
+
+#content h1 {
+  text-align: center;
+  font-size: 2em;
+  line-height: 1em;
+  background: #00ccff;
+  border: 2px solid black;
+  border-bottom: none;
+}
+
+.description {
+  border: 2px solid black;
+  border-top: none;
+  font-size: 1em;
+  padding: 5px;
+}

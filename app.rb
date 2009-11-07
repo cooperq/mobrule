@@ -29,8 +29,19 @@ get '/:consensus' do
 end
 
 #create a consensus
-get '/:consensus/new' do
+get '/consensus/new' do
   haml :new_consensus
+end
+
+#submit a vote
+post '/:consensus/vote' do
+  vote = Vote.new(params)
+  vote.save!
+end
+
+#form to submit a vote
+get '/:consensus/vote' do
+  haml :vote_form
 end
 
 #update a consensus
@@ -45,19 +56,5 @@ end
 #delete a consensus
 delete '/:consensus/:hash' do
   #consensus.delete
-end
-#submit a vote
-post '/:consensus/vote' do
-  #vote.save!
-end
-
-#form to submit a vote
-get '/:consensus/vote' do
-  haml :vote_form
-end
-
-get '/error/404' do
-  status 404
-  haml :error_404
 end
 
