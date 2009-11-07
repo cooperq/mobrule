@@ -8,8 +8,6 @@
   - if @topic.consents > 0
     =@topic.consents
     people have consented.
-  .votelink
-    %a.votelink{:href=>'/' + @topic.permalink + '/vote'} Vote on this topic now!
   .comments
     -@topic.votes.each do |v|
       .text

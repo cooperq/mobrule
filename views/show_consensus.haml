@@ -1,3 +1,4 @@
 %h1= @topic.title
 .description= @topic.description
+= haml :vote_form, :layout=>false
 .votes= haml :list_votes, :layout=>false

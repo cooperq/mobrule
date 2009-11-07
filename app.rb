@@ -35,8 +35,13 @@ end
 
 #submit a vote
 post '/:consensus/vote' do
-  vote = Vote.new(params)
+  vote = Vote.new
+  vote.vote = params[:vote]
+  vote.comment = params[:comment]
+  vote.topic_id = params[:topic_id]
   vote.save!
+  @flash = "Thanks for your vote! It has been submitted"
+  redirect '/' + params[:consensus]
 end
 
 #form to submit a vote
