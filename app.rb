@@ -5,41 +5,58 @@ require 'datamapper'
 require 'models/lib'
 
 get '/' do
- haml :index
+  @topics = Topic.all
+  haml :index
 end
 
+get '/error/404' do
+  status 404
+  haml :error_404
+end
 #view a specific consensus
 #also shows the list of votes
 get '/:consensus' do
-  @topic
-  haml :consensus
+  @topic = Topic.first(:permalink=>params[:consensus])
+  @flash = "This topic has been blocked" if @topic.blocked?
+  redirect '/error/404' if @topic.nil?
+  haml :show_consensus
+end
+
+get '/error/404' do
+  status 404
+  haml :error_404
 end
 
 #create a consensus
-get ':consensus/new' do
+get '/:consensus/new' do
   haml :new_consensus
 end
 
 #update a consensus
-get ':consensus/:hash' do
+get '/:consensus/:hash' do
   haml :consensus_form
 end
 
-post ':consensus/:hash' do
+post '/:consensus/:hash' do
   #consensus.save!
 end
 
 #delete a consensus
-delete ':consensus/:hash' do
+delete '/:consensus/:hash' do
   #consensus.delete
 end
 #submit a vote
-post ':consensus/vote' do
+post '/:consensus/vote' do
   #vote.save!
 end
 
 #form to submit a vote
-get ':consensus/vote' do
+get '/:consensus/vote' do
   haml :vote_form
+end
+
+get '/error/404' do
+  status 404
+  haml :error_404
 end
 
