@@ -1,14 +1,13 @@
 .stats
-  - if @topic.blocks > 0
-    =@topic.blocks
-    people have blocked.
-  - if @topic.stand_asides > 0
-    =@topic.stand_asides
-    people have stood aside.
-  - if @topic.consents > 0
-    =@topic.consents
-    people have consented.
-  .comments
-    -@topic.votes.each do |v|
-      .text
-        =v.comment
+  %p
+    - if @topic.blocks > 0
+      =@topic.blocks
+      people have blocked.
+  %p
+    - if @topic.stand_asides > 0
+      =@topic.stand_asides
+      people have stood aside.
+  %p
+    - if @topic.consents > 0
+      =@topic.consents
+      people have consented.
