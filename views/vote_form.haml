@@ -1,10 +1,12 @@
-%form.voteform{:method=>'POST', :action=>@topic.permalink + '/vote'}
-  %textarea{:name=>'comment', :rows=>10, :cols=>60}
-  %input{:type=>'hidden', :name=>'topic_id', :value=>@topic.id}
-  .select-text How do you vote on this topic?
-  %select{:name=>'vote'}
-    %option Just comment for now, thanks.
-    %option{:value=>-1} Block
-    %option{:value=>0} Stand Aside
-    %option{:value=>1} Consent
-  %input{:type=>'submit', :value=>'VOTE!'}
+.voteform-container
+  %form.voteform{:method=>'POST', :action=>@topic.permalink + '/vote'}
+    %textarea{:name=>'comment', :rows=>10, :cols=>60}
+    %input{:type=>'hidden', :name=>'topic_id', :value=>@topic.id}
+    .select-text How do you vote on this topic?
+    %select{:name=>'vote'}
+      %option Just comment for now, thanks.
+      %option{:value=>-1} Block
+      %option{:value=>0} Stand Aside
+      %option{:value=>1} Consent
+    %input{:type=>'submit', :value=>'VOTE!'}
+.clear

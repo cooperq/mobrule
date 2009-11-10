@@ -33,6 +33,13 @@ get '/consensus/new' do
   haml :new_consensus
 end
 
+post '/consensus/new' do
+  c = Consensus.new
+  c.save!
+  @flash = "Your topic has been submitted"
+  redirect '/' + c.permalink
+end
+
 #submit a vote
 post '/:consensus/vote' do
   vote = Vote.new

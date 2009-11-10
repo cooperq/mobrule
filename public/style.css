@@ -126,13 +126,20 @@ a:hover {
   clear: right;
 }
 
-.voteform {
+.voteform-container {
   display: inline;
   float: left;
+  height: 100%;
+}
+
+.form-info-container {
+  height: 250px;
+  padding: 15px;
 }
 
 .stats {
   float: right;
+  z-index: 10;
 }
 
 .comments .text {

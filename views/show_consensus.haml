@@ -1,7 +1,7 @@
 %h1= @topic.title
 .description= @topic.description
-= haml :vote_form, :layout=>false
-= haml :list_votes, :layout=>false
-.clear
-.clear
+.form-info-container
+  = haml :vote_form, :layout=>false
+  = haml :list_votes, :layout=>false
+  .clear
 = haml :list_comments, :layout=>false
