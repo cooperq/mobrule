@@ -1,0 +1,10 @@
+* before filters to generate hashes and other neccessary data.jjj
+* topics should be able to be marked  private
+* tests should be written
+* user with hash should be able to edit and delete topics
+* blocked topics should be locked
+* system should send  out emails to the creator of the topic
+* should not display empty comments
+* votes should be marked as anonymous or public
+* users should be able to create accounts IF THEY CHOOSE
+* 

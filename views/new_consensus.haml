@@ -1,0 +1,23 @@
+%h1 Create a new topic to consense about.
+.consensus-form
+  %form{:method=>'post', :action=>'/consensus/new'}
+    %p.form-field
+      Title: 
+      %input{:type=>'text', :name=>'title'}
+    %p.form-field
+      Description: 
+      %br
+      %textarea{:name=>'description'}
+    %p.form-field
+      Tolerance (how many people can stand aside before the  topic is blocked):
+      %input{:type=>'text', :name=>'tolerance'}
+      Limit (how many people must vote before a consensus is reached: 
+      %input{:type=>'text', :name=>'needed_votes'}
+    %p.form-field
+      Email Address: 
+      %input{:type=>'text', :name=>'contact_email'}
+    %p.form-field
+      Permalink: 
+      %input{:type=>'text', :name=>'permalink'}
+    %p.form-field
+      %input{:type=>'submit', :value=>'create topic!'}

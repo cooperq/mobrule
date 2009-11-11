@@ -34,7 +34,7 @@ get '/consensus/new' do
 end
 
 post '/consensus/new' do
-  c = Consensus.new
+  c = Topic.new(params)
   c.save!
   @flash = "Your topic has been submitted"
   redirect '/' + c.permalink
