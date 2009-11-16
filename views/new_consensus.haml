@@ -9,10 +9,13 @@
       %br
       %textarea{:name=>'description'}
     %p.form-field
-      Tolerance (how many people can stand aside before the  topic is blocked):
-      %input{:type=>'text', :name=>'tolerance'}
-      Limit (how many people must vote before a consensus is reached: 
-      %input{:type=>'text', :name=>'needed_votes'}
+      Stand Aside Limit:
+      %input{:type=>'text', :name=>'tolerance', :length=>3}
+      .helptext How many people can stand aside before a topic is blocked.
+    %p.form-field
+      Vote Limit 
+      %input{:type=>'text', :name=>'needed_votes', :length=>3}
+      .helptext How many people must vote before a consensus is reached.
     %p.form-field
       Email Address: 
       %input{:type=>'text', :name=>'contact_email'}
@@ -21,3 +24,6 @@
       %input{:type=>'text', :name=>'permalink'}
     %p.form-field
       %input{:type=>'submit', :value=>'create topic!'}
+    %p.form-field
+      Make this topic private? 
+      %input{:type=>'checkbox', :value=>'SELECTED', :name=>'private'}

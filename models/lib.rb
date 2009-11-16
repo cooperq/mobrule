@@ -1,4 +1,4 @@
-DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/db/consensus.db")
+DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/consensus.db")
 
 require 'models/votes'
 require 'models/topics'

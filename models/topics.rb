@@ -15,6 +15,8 @@ class Topic
   property :contact_email, String
   property :permalink, String
   property :hash, String
+  property :private, Boolean
+
   has n, :votes
 
   def blocked?

@@ -3,9 +3,10 @@ require 'sinatra'
 require 'haml'
 require 'datamapper'
 require 'models/lib'
+require 'prettyprint'
 
 get '/' do
-  @topics = Topic.all
+  @topics = Topic.all(:private=>nil)
   haml :index
 end
 
@@ -36,7 +37,7 @@ end
 post '/consensus/new' do
   c = Topic.new(params)
   c.save!
-  @flash = "Your topic has been submitted"
+  raise params.inspect
   redirect '/' + c.permalink
 end
 
